@@ -14,18 +14,19 @@ def mastermind():
     guessCombination = [int(), int(), int(), int()]
     GameIsOver = False
     guesses = 0
-    
+    # check boolean for playstate and setup the checker or validation list
     while GameIsOver == False:
         checker=["", "", "", ""]
         rightval = 0 
         rightpos = 0
-        
+        # switch boolean after 10 guesses.
         if guesses >= 10:
             GameIsOver = True
             clear(5)
             print("Mastermind has bested you! Better luck next time!")
             menu()
         else:
+            # here we try to keep players from using any input other than integers. Still haven't implemented a way to keep input to single digits
             awaitingInput = True
             while awaitingInput:
                 try:
@@ -41,6 +42,7 @@ def mastermind():
                 else:
                     awaitingInput = False
             guesses += 1
+            # here we check our win state and comb through our lists and check against our validation to see how close we are to solving.
             if mastermindCombination == guessCombination:
                 GameIsOver = True
                 clear(5)
@@ -64,6 +66,7 @@ def mastermind():
                 print(f"and you've guessed {rightpos} correct values in the right position.")
                 clear(2)
                 print(f"your last guess was: {guessCombination}")
+# method to display the rules screen
 def rules():
     print("--WELCOME TO MASTERMIND--\n--Rules--\nIn this Game you receive an invisible List with 4 items.\nEach item has a value from 1 to 6. And you get 10 combination guesses\n10 Guesses to pinpoint the correct combination of hidden values stored in the List\n\n--Controls--\nAll Input is given via Keyboard. 'P', 'Q', 'R', and 'Enter' navigate the Menu\n Valid Input for Mastermind are the Digits '1-6' and 'Enter'.\nOn the rules screen, you can use the any key.")
     clear(2)
@@ -76,7 +79,7 @@ def rules():
         clear(10)
         menu()
 
-# could have used match cases here, but with only three options, an if-elif-else function seemed appropriate.
+# ,ethod to display the menu. could have used match cases here, but with only three options, an if-elif-else function seemed appropriate.
 def menu():
     clear(2)
     print("--MENU--\n'P' to Play\n'Q' to Quit\n'R' for Rules\nPress 'Enter' to confirm.")
@@ -98,5 +101,5 @@ def menu():
         menu()
         
 if __name__ == "__main__":
-
     menu()
+
