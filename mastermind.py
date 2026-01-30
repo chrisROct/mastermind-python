@@ -79,11 +79,7 @@ def rules():
 # could have used match cases here, but with only three options, an if-elif-else function seemed appropriate.
 def menu():
     clear(2)
-    print("--MENU--")
-    print("'P' to Play")
-    print("'Q' to Quit")
-    print("'R' for Rules")
-    print("Press 'Enter' to confirm.")
+    print("--MENU--\n'P' to Play\n'Q' to Quit\n'R' for Rules\nPress 'Enter' to confirm.")
     playerInput = input("input:")
     if playerInput == 'p':
         clear(10)
@@ -102,4 +98,5 @@ def menu():
         menu()
         
 if __name__ == "__main__":
+
     menu()
