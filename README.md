@@ -9,7 +9,7 @@ Just a little project to further deepen my understanding of python.
 A simple little program that lets you play mastermind the code-cracking game, to your hearts content.
 But also fun to tinker with. Feel free to pick apart the code and mess around with it.
 I've included a compiled version for those that don't want to install python, or mess around with an IDE.
-For those that would like to know how I compiled to a executable:
+For those that would like to know how I compiled to an executable:
 
 first I installed pyinstaller via
 
